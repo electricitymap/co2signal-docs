@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Documentation</title>
+    <title>API Reference</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -88,7 +88,7 @@
     </style>
     <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all_nosearch.js"></script>
+      <script src="javascripts/all.js"></script>
   </head>
 
   <body class="index" data-languages="[]">
@@ -100,8 +100,16 @@
     </a>
     <div class="tocify-wrapper">
       <img src="images/logo.png" alt="Logo" />
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
       <div id="toc">
       </div>
+        <ul class="toc-footer">
+            <li><a href='http://co2signal.com/' target='_blank'>Sign Up for a Developer Key</a></li>
+            <li>Questions? <a href='mailto:hello@tmrow.co'>Reach out to us</a></li>
+        </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
@@ -203,10 +211,6 @@ You must replace <code>myapitoken</code> with your personal API key.
 </tr>
 </tbody></table>
 
-<!-- <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside> &ndash;>
-
 <h2 id="get-latest-by-geographic-coordinate">Get latest by geographic coordinate</h2>
 <pre class="highlight shell"><code>curl <span class="s1">'https://api.co2signal.com/v1/latest?lon=6.8770394&amp;lat=45.9162776'</span>
   -H <span class="s2">"Authorization: myapitoken"</span>
@@ -281,9 +285,155 @@ Currently we default to zones by country, but this will quickly evolve to be as 
 </tr>
 </tbody></table>
 
-<!-- <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>&ndash;>
+<h2 id="get-history-by-country-code">Get history by country code</h2>
+<pre class="highlight shell"><code>curl <span class="s1">'https://api.co2signal.com/v1/history?countryCode=FR'</span>
+  -H <span class="s2">"Authorization: myapitoken"</span>
+</code></pre>
+<blockquote>
+<p>Compared to the /latest endpoint, this one returns a list instead of a single element.
+ The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"countryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FR"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"carbonIntensity"</span><span class="p">:</span><span class="w"> </span><span class="mf">93.0727344671727</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-09T08:30:00.000Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"exchange"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nt">"BE"</span><span class="p">:</span><span class="w"> </span><span class="mi">986</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"CH"</span><span class="p">:</span><span class="w"> </span><span class="mi">-658</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"DE"</span><span class="p">:</span><span class="w"> </span><span class="mi">-735</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"ES"</span><span class="p">:</span><span class="w"> </span><span class="mi">2466</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"GB"</span><span class="p">:</span><span class="w"> </span><span class="mi">985</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"IT"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1730</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nt">"fossilFuelPercentage"</span><span class="p">:</span><span class="w"> </span><span class="mf">12.032514442152996</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">70.97</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"production"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nt">"biomass"</span><span class="p">:</span><span class="w"> </span><span class="mi">776</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"coal"</span><span class="p">:</span><span class="w"> </span><span class="mi">592</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"gas"</span><span class="p">:</span><span class="w"> </span><span class="mi">8467</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"hydro"</span><span class="p">:</span><span class="w"> </span><span class="mi">11226</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"nuclear"</span><span class="p">:</span><span class="w"> </span><span class="mi">54085</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"oil"</span><span class="p">:</span><span class="w"> </span><span class="mi">918</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"solar"</span><span class="p">:</span><span class="w"> </span><span class="mi">926</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"wind"</span><span class="p">:</span><span class="w"> </span><span class="mi">1490</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nt">"storage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nt">"hydro"</span><span class="p">:</span><span class="w"> </span><span class="mi">172</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"units"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"carbonIntensity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gCO2eq/kWh"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"exchange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MW"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR/MWh"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"production"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MW"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"storage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MW"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves the last known state of a country.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.co2signal.com/v1/history</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>countryCode</td>
+<td></td>
+<td>two-letter iso country code</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-history-by-geographic-coordinate">Get history by geographic coordinate</h2>
+<pre class="highlight shell"><code>curl <span class="s1">'https://api.co2signal.com/v1/history?lon=6.8770394&amp;lat=45.9162776'</span>
+  -H <span class="s2">"Authorization: myapitoken"</span>
+</code></pre>
+<blockquote>
+<p>Compared to the /latest endpoint, this one returns a list instead of a single element.
+ The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"countryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FR"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"carbonIntensity"</span><span class="p">:</span><span class="w"> </span><span class="mf">93.0727344671727</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-09T08:30:00.000Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"exchange"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nt">"BE"</span><span class="p">:</span><span class="w"> </span><span class="mi">986</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"CH"</span><span class="p">:</span><span class="w"> </span><span class="mi">-658</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"DE"</span><span class="p">:</span><span class="w"> </span><span class="mi">-735</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"ES"</span><span class="p">:</span><span class="w"> </span><span class="mi">2466</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"GB"</span><span class="p">:</span><span class="w"> </span><span class="mi">985</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"IT"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1730</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nt">"fossilFuelPercentage"</span><span class="p">:</span><span class="w"> </span><span class="mf">12.032514442152996</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">70.97</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"production"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nt">"biomass"</span><span class="p">:</span><span class="w"> </span><span class="mi">776</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"coal"</span><span class="p">:</span><span class="w"> </span><span class="mi">592</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"gas"</span><span class="p">:</span><span class="w"> </span><span class="mi">8467</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"hydro"</span><span class="p">:</span><span class="w"> </span><span class="mi">11226</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"nuclear"</span><span class="p">:</span><span class="w"> </span><span class="mi">54085</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"oil"</span><span class="p">:</span><span class="w"> </span><span class="mi">918</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"solar"</span><span class="p">:</span><span class="w"> </span><span class="mi">926</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"wind"</span><span class="p">:</span><span class="w"> </span><span class="mi">1490</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nt">"storage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nt">"hydro"</span><span class="p">:</span><span class="w"> </span><span class="mi">172</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"units"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"carbonIntensity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gCO2eq/kWh"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"exchange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MW"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR/MWh"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"production"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MW"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"storage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MW"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves the last known state of the zone.
+Currently we default to zones by country, but this will quickly evolve to be as granular as possible.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.co2signal.com/v1/latest</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>lon</td>
+<td></td>
+<td>longitude</td>
+</tr>
+<tr>
+<td>lat</td>
+<td></td>
+<td>latitude</td>
+</tr>
+</tbody></table>
 
       </div>
       <div class="dark-box">
