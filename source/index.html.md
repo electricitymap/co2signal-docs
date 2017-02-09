@@ -3,7 +3,7 @@ title: API Reference
 
 toc_footers:
   - <a href='http://co2signal.com/' target='_blank'>Sign Up for a Developer Key</a>
-  - Questions? <a href='mailto:hello@tmrow.co'>Reach out to us</a>
+  - Questions? <a href='mailto:hello@co2signal.com'>Reach out to us</a>
 
 search: true
 ---
@@ -23,7 +23,7 @@ Welcome to the CO2 Signal API! You can use our API to get access to information 
 ```shell
 # With shell, you can just pass the correct header with each request
 curl 'https://api.co2signal.com/v1/latest?countryCode=DK'
-  -H "Authorization: myapitoken"
+  -H "auth-token: myapitoken"
 ```
 
 > Make sure to replace `myapitoken` with your API key.
@@ -43,7 +43,7 @@ You must replace <code>myapitoken</code> with your personal API key.
 ## Get latest by country code
 ```shell
 curl 'https://api.co2signal.com/v1/latest?countryCode=FR'
-  -H "Authorization: myapitoken"
+  -H "auth-token: myapitoken"
 ```
 
 > The above command returns JSON structured like this:
@@ -105,7 +105,7 @@ countryCode | | two-letter iso country code
 
 ```shell
 curl 'https://api.co2signal.com/v1/latest?lon=6.8770394&lat=45.9162776'
-  -H "Authorization: myapitoken"
+  -H "auth-token: myapitoken"
 ```
 
 > The above command returns JSON structured like this:
@@ -169,7 +169,7 @@ lat | | latitude
 ## Get history by country code
 ```shell
 curl 'https://api.co2signal.com/v1/history?countryCode=FR'
-  -H "Authorization: myapitoken"
+  -H "auth-token: myapitoken"
 ```
 
 > Compared to the /latest endpoint, this one returns a list instead of a single element.
@@ -236,7 +236,7 @@ countryCode | | two-letter iso country code
 
 ```shell
 curl 'https://api.co2signal.com/v1/history?lon=6.8770394&lat=45.9162776'
-  -H "Authorization: myapitoken"
+  -H "auth-token: myapitoken"
 ```
 
 > Compared to the /latest endpoint, this one returns a list instead of a single element.
