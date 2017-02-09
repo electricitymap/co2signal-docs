@@ -1,15 +1,10 @@
 ---
 title: API Reference
 
-language_tabs:
-  - shell
-
 toc_footers:
   - <a href='http://co2signal.com/' target='_blank'>Sign Up for a Developer Key</a>
+  - Questions? <a href='mailto:hello@tmrow.co'>Reach out to us</a>
 
-<!-- includes:
-  - errors
- -->
 search: true
 ---
 
@@ -102,10 +97,6 @@ Parameter | Default | Description
 --------- | ------- | -----------
 countryCode | | two-letter iso country code
 
-<!-- <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside> -->
-
 ## Get latest by geographic coordinate
 
 ```shell
@@ -170,7 +161,138 @@ Parameter | Default | Description
 lon | | longitude
 lat | | latitude
 
-<!-- <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>-->
+
+## Get history by country code
+```shell
+curl 'https://api.co2signal.com/v1/history?countryCode=FR'
+  -H "Authorization: myapitoken"
+```
+
+> Compared to the /latest endpoint, this one returns a list instead of a single element.
+ The above command returns JSON structured like this:
+
+```json
+{
+    "countryCode": "FR",
+    "data": [
+      {
+          "carbonIntensity": 93.0727344671727,
+          "datetime": "2017-02-09T08:30:00.000Z",
+          "exchange": {
+              "BE": 986,
+              "CH": -658,
+              "DE": -735,
+              "ES": 2466,
+              "GB": 985,
+              "IT": -1730
+          },
+          "fossilFuelPercentage": 12.032514442152996,
+          "price": 70.97,
+          "production": {
+              "biomass": 776,
+              "coal": 592,
+              "gas": 8467,
+              "hydro": 11226,
+              "nuclear": 54085,
+              "oil": 918,
+              "solar": 926,
+              "wind": 1490
+          },
+          "storage": {
+              "hydro": 172
+          }
+      },
+      ...
+    ],
+    "status": "ok",
+    "units": {
+        "carbonIntensity": "gCO2eq/kWh",
+        "exchange": "MW",
+        "price": "EUR/MWh",
+        "production": "MW",
+        "storage": "MW"
+    }
+}
+```
+
+This endpoint retrieves the last known state of a country.
+
+### HTTP Request
+
+`GET https://api.co2signal.com/v1/history`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+countryCode | | two-letter iso country code
+
+
+## Get history by geographic coordinate
+
+```shell
+curl 'https://api.co2signal.com/v1/history?lon=6.8770394&lat=45.9162776'
+  -H "Authorization: myapitoken"
+```
+
+> Compared to the /latest endpoint, this one returns a list instead of a single element.
+ The above command returns JSON structured like this:
+
+```json
+{
+    "countryCode": "FR",
+    "data": [
+      {
+          "carbonIntensity": 93.0727344671727,
+          "datetime": "2017-02-09T08:30:00.000Z",
+          "exchange": {
+              "BE": 986,
+              "CH": -658,
+              "DE": -735,
+              "ES": 2466,
+              "GB": 985,
+              "IT": -1730
+          },
+          "fossilFuelPercentage": 12.032514442152996,
+          "price": 70.97,
+          "production": {
+              "biomass": 776,
+              "coal": 592,
+              "gas": 8467,
+              "hydro": 11226,
+              "nuclear": 54085,
+              "oil": 918,
+              "solar": 926,
+              "wind": 1490
+          },
+          "storage": {
+              "hydro": 172
+          }
+      },
+      ...
+    ],
+    "status": "ok",
+    "units": {
+        "carbonIntensity": "gCO2eq/kWh",
+        "exchange": "MW",
+        "price": "EUR/MWh",
+        "production": "MW",
+        "storage": "MW"
+    }
+}
+```
+
+This endpoint retrieves the last known state of the zone.
+Currently we default to zones by country, but this will quickly evolve to be as granular as possible.
+
+### HTTP Request
+
+`GET https://api.co2signal.com/v1/latest`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+lon | | longitude
+lat | | latitude
 
