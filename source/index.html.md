@@ -219,7 +219,7 @@ curl 'https://api.co2signal.com/v1/history?countryCode=FR'
 }
 ```
 
-This endpoint retrieves the last known state of a country.
+This endpoint retrieves the states of the last 24h of a country.
 
 ### HTTP Request
 
@@ -286,7 +286,7 @@ curl 'https://api.co2signal.com/v1/history?lon=6.8770394&lat=45.9162776'
 }
 ```
 
-This endpoint retrieves the last known state of the zone.
+This endpoint retrieves the states of the last 24h of a zone.
 Currently we default to zones by country, but this will quickly evolve to be as granular as possible.
 
 ### HTTP Request
