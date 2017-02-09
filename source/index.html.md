@@ -10,7 +10,11 @@ search: true
 
 # Introduction
 
-Welcome to the CO2 Signal API! You can use our API to get access to informations about where the electricity in a specific region comes from, how it was produces, and how carbon was emitted to produce it.
+Welcome to the CO2 Signal API! You can use our API to get access to information about
+
+- where the electricity in a specific region comes from
+- how it was produced
+- how much carbon was emitted to produce it
 
 # Authentication
 
@@ -24,13 +28,13 @@ curl 'https://api.co2signal.com/v1/latest?countryCode=DK'
 
 > Make sure to replace `myapitoken` with your API key.
 
-CO2 Signal uses API keys to allow access to the API. You can register for an API key [here](http://www.co2signal.com).
+CO2 Signal uses API keys to allow access to the API. You can get an API key [here](http://www.co2signal.com).
 
 CO2 Signal expects the API key to be included as a header in all requests to the server:
 
 `auth-token: myapitoken`
 
-<aside class="notice">
+<aside class="success">
 You must replace <code>myapitoken</code> with your personal API key.
 </aside>
 
