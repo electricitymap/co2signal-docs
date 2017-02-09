@@ -116,7 +116,13 @@
       <div class="content">
         <h1 id="introduction">Introduction</h1>
 
-<p>Welcome to the CO2 Signal API! You can use our API to get access to informations about where the electricity in a specific region comes from, how it was produces, and how carbon was emitted to produce it.</p>
+<p>Welcome to the CO2 Signal API! You can use our API to get access to information about</p>
+
+<ul>
+<li>where the electricity in a specific region comes from</li>
+<li>how it was produced</li>
+<li>how much carbon was emitted to produce it</li>
+</ul>
 
 <h1 id="authentication">Authentication</h1>
 
@@ -131,13 +137,13 @@ curl <span class="s1">'https://api.co2signal.com/v1/latest?countryCode=DK'</span
 <p>Make sure to replace <code class="prettyprint">myapitoken</code> with your API key.</p>
 </blockquote>
 
-<p>CO2 Signal uses API keys to allow access to the API. You can register for an API key <a href="http://www.co2signal.com">here</a>.</p>
+<p>CO2 Signal uses API keys to allow access to the API. You can get an API key <a href="http://www.co2signal.com">here</a>.</p>
 
 <p>CO2 Signal expects the API key to be included as a header in all requests to the server:</p>
 
 <p><code class="prettyprint">auth-token: myapitoken</code></p>
 
-<aside class="notice">
+<aside class="success">
 You must replace <code>myapitoken</code> with your personal API key.
 </aside>
 
@@ -335,7 +341,7 @@ Currently we default to zones by country, but this will quickly evolve to be as 
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves the last known state of a country.</p>
+<p>This endpoint retrieves the states of the last 24h of a country.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -407,7 +413,7 @@ Currently we default to zones by country, but this will quickly evolve to be as 
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves the last known state of the zone.
+<p>This endpoint retrieves the states of the last 24h of a zone.
 Currently we default to zones by country, but this will quickly evolve to be as granular as possible.</p>
 
 <h3 id="http-request">HTTP Request</h3>
