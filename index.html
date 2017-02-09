@@ -108,7 +108,7 @@
       </div>
         <ul class="toc-footer">
             <li><a href='http://co2signal.com/' target='_blank'>Sign Up for a Developer Key</a></li>
-            <li>Questions? <a href='mailto:hello@tmrow.co'>Reach out to us</a></li>
+            <li>Questions? <a href='mailto:hello@co2signal.com'>Reach out to us</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -131,7 +131,7 @@
 </blockquote>
 <pre class="highlight shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 curl <span class="s1">'https://api.co2signal.com/v1/latest?countryCode=DK'</span>
-  -H <span class="s2">"Authorization: myapitoken"</span>
+  -H <span class="s2">"auth-token: myapitoken"</span>
 </code></pre>
 <blockquote>
 <p>Make sure to replace <code class="prettyprint">myapitoken</code> with your API key.</p>
@@ -151,7 +151,7 @@ You must replace <code>myapitoken</code> with your personal API key.
 
 <h2 id="get-latest-by-country-code">Get latest by country code</h2>
 <pre class="highlight shell"><code>curl <span class="s1">'https://api.co2signal.com/v1/latest?countryCode=FR'</span>
-  -H <span class="s2">"Authorization: myapitoken"</span>
+  -H <span class="s2">"auth-token: myapitoken"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -219,7 +219,7 @@ You must replace <code>myapitoken</code> with your personal API key.
 
 <h2 id="get-latest-by-geographic-coordinate">Get latest by geographic coordinate</h2>
 <pre class="highlight shell"><code>curl <span class="s1">'https://api.co2signal.com/v1/latest?lon=6.8770394&amp;lat=45.9162776'</span>
-  -H <span class="s2">"Authorization: myapitoken"</span>
+  -H <span class="s2">"auth-token: myapitoken"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -293,7 +293,7 @@ Currently we default to zones by country, but this will quickly evolve to be as 
 
 <h2 id="get-history-by-country-code">Get history by country code</h2>
 <pre class="highlight shell"><code>curl <span class="s1">'https://api.co2signal.com/v1/history?countryCode=FR'</span>
-  -H <span class="s2">"Authorization: myapitoken"</span>
+  -H <span class="s2">"auth-token: myapitoken"</span>
 </code></pre>
 <blockquote>
 <p>Compared to the /latest endpoint, this one returns a list instead of a single element.
@@ -365,7 +365,7 @@ Currently we default to zones by country, but this will quickly evolve to be as 
 
 <h2 id="get-history-by-geographic-coordinate">Get history by geographic coordinate</h2>
 <pre class="highlight shell"><code>curl <span class="s1">'https://api.co2signal.com/v1/history?lon=6.8770394&amp;lat=45.9162776'</span>
-  -H <span class="s2">"Authorization: myapitoken"</span>
+  -H <span class="s2">"auth-token: myapitoken"</span>
 </code></pre>
 <blockquote>
 <p>Compared to the /latest endpoint, this one returns a list instead of a single element.
