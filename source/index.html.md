@@ -17,7 +17,7 @@ Welcome to the CO2 Signal API! You can use our API to get access to information 
 - how much carbon was emitted to produce it
 
 <aside class="warning">
-This API is free for <b>non-commercial use</b>. Reach out to <a href='mailto:hello@co2signal.com'>Reach out to us</a> if you plan to commercialise it.
+This API is free for <b>non-commercial use</b>. <a href='mailto:hello@co2signal.com'>Reach out to us</a> if you plan to commercialise it.
 </aside>
 
 # Authentication
