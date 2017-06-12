@@ -6,7 +6,7 @@
 
 <p align="center">Slate helps you create beautiful, intelligent, responsive API documentation.</p>
 
-<p align="center"><img src="https://dl.dropboxusercontent.com/u/95847291/github%20images/slate/slate_screenshot_new.png" width=700 alt="Screenshot of Example Documentation created with Slate"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lord/img/master/screenshot-slate.png" width=700 alt="Screenshot of Example Documentation created with Slate"></p>
 
 <p align="center"><em>The example above was created with Slate. Check it out at <a href="https://lord.github.io/slate">lord.github.io/slate</a>.</em></p>
 
@@ -68,7 +68,7 @@ Companies Using Slate
 * [NASA](https://api.nasa.gov)
 * [IBM](https://docs.cloudant.com/api.html)
 * [Sony](http://developers.cimediacloud.com)
-* [Mozilla](http://mozilla.github.io/localForage/)
+* [Mozilla](http://localforage.github.io/localForage/)
 * [Best Buy](https://bestbuyapis.github.io/api-documentation/)
 * [Travis-CI](https://docs.travis-ci.com/api/)
 * [Greenhouse](https://developers.greenhouse.io/harvest.html)
@@ -79,6 +79,7 @@ Companies Using Slate
 * [Coinbase](https://developers.coinbase.com/api)
 * [Parrot Drones](http://developer.parrot.com/docs/bebop/)
 * [Fidor Bank](http://docs.fidor.de/)
+* [Scale](https://docs.scaleapi.com/)
 
 You can view more in [the list on the wiki](https://github.com/lord/slate/wiki/Slate-in-the-Wild).
 
