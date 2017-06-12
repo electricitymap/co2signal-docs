@@ -2,7 +2,7 @@
 title: API Reference
 
 toc_footers:
-  - <a href='http://co2signal.com/' target='_blank'>Sign Up for a Developer Key</a>
+  - <a href='https://www.co2signal.com/' target='_blank'>Sign Up for a Developer Key</a>
   - Questions? <a href='mailto:hello@co2signal.com'>Reach out to us</a>
 
 search: true
@@ -15,6 +15,10 @@ Welcome to the CO2 Signal API! You can use our API to get access to information 
 - where the electricity in a specific region comes from
 - how it was produced
 - how much carbon was emitted to produce it
+
+<aside class="warning">
+This API is free for <b>non-commercial use</b>. Reach out to <a href='mailto:hello@co2signal.com'>Reach out to us</a> if you plan to commercialise it.
+</aside>
 
 # Authentication
 
