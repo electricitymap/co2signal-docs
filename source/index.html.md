@@ -27,7 +27,7 @@ This API is free for <b>non-commercial use</b>. <a href='mailto:hello@co2signal.
 ```shell
 # With shell, you can just pass the correct header with each request
 curl 'https://api.co2signal.com/v1/latest?countryCode=DK'
-  -H "auth-token: myapitoken"
+  -H 'auth-token: myapitoken'
 ```
 
 > Make sure to replace `myapitoken` with your API key.
@@ -47,7 +47,7 @@ You must replace <code>myapitoken</code> with your personal API key.
 ## Get latest by country code
 ```shell
 curl 'https://api.co2signal.com/v1/latest?countryCode=FR'
-  -H "auth-token: myapitoken"
+  -H 'auth-token: myapitoken'
 ```
 
 > The above command returns JSON structured like this:
@@ -109,7 +109,7 @@ countryCode | | two-letter iso country code
 
 ```shell
 curl 'https://api.co2signal.com/v1/latest?lon=6.8770394&lat=45.9162776'
-  -H "auth-token: myapitoken"
+  -H 'auth-token: myapitoken'
 ```
 
 > The above command returns JSON structured like this:
@@ -173,7 +173,7 @@ lat | | latitude
 ## Get forecast by country code
 ```shell
 curl 'https://api.co2signal.com/v1/forecast?countryCode=DK'
-  -H "auth-token: myapitoken"
+  -H 'auth-token: myapitoken'
 ```
 
 > The above command returns JSON structured like this:
@@ -211,7 +211,7 @@ countryCode | | two-letter iso country code
 ## Get history by country code
 ```shell
 curl 'https://api.co2signal.com/v1/history?countryCode=FR'
-  -H "auth-token: myapitoken"
+  -H 'auth-token: myapitoken'
 ```
 
 > Compared to the /latest endpoint, this one returns a list instead of a single element.
@@ -278,7 +278,7 @@ countryCode | | two-letter iso country code
 
 ```shell
 curl 'https://api.co2signal.com/v1/history?lon=6.8770394&lat=45.9162776'
-  -H "auth-token: myapitoken"
+  -H 'auth-token: myapitoken'
 ```
 
 > Compared to the /latest endpoint, this one returns a list instead of a single element.
