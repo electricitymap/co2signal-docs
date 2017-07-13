@@ -58,37 +58,11 @@ curl 'https://api.co2signal.com/v1/latest?countryCode=FR'
     "data": {
         "carbonIntensity": 92.97078744790771,
         "datetime": "2017-02-09T08:30:00.000Z",
-        "exchange": {
-            "BE": 1011,
-            "CH": -658,
-            "DE": -735,
-            "ES": 2466,
-            "GB": 985,
-            "IT": -1730
-        },
-        "fossilFuelPercentage": 12.028887656434616,
-        "price": 70.97,
-        "production": {
-            "biomass": 776,
-            "coal": 592,
-            "gas": 8467,
-            "hydro": 11226,
-            "nuclear": 54085,
-            "oil": 918,
-            "solar": 926,
-            "wind": 1490
-        },
-        "storage": {
-            "hydro": 172
-        }
+        "fossilFuelPercentage": 12.028887656434616
     },
     "status": "ok",
     "units": {
-        "carbonIntensity": "gCO2eq/kWh",
-        "exchange": "MW",
-        "price": "EUR/MWh",
-        "production": "MW",
-        "storage": "MW"
+        "carbonIntensity": "gCO2eq/kWh"
     }
 }
 ```
@@ -120,37 +94,11 @@ curl 'https://api.co2signal.com/v1/latest?lon=6.8770394&lat=45.9162776'
     "data": {
         "carbonIntensity": 93.0727344671727,
         "datetime": "2017-02-09T08:30:00.000Z",
-        "exchange": {
-            "BE": 986,
-            "CH": -658,
-            "DE": -735,
-            "ES": 2466,
-            "GB": 985,
-            "IT": -1730
-        },
-        "fossilFuelPercentage": 12.032514442152996,
-        "price": 70.97,
-        "production": {
-            "biomass": 776,
-            "coal": 592,
-            "gas": 8467,
-            "hydro": 11226,
-            "nuclear": 54085,
-            "oil": 918,
-            "solar": 926,
-            "wind": 1490
-        },
-        "storage": {
-            "hydro": 172
-        }
+        "fossilFuelPercentage": 12.032514442152996
     },
     "status": "ok",
     "units": {
-        "carbonIntensity": "gCO2eq/kWh",
-        "exchange": "MW",
-        "price": "EUR/MWh",
-        "production": "MW",
-        "storage": "MW"
+        "carbonIntensity": "gCO2eq/kWh"
     }
 }
 ```
