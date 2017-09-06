@@ -234,7 +234,7 @@
 </ul>
 
 <aside class="warning">
-This API is free for <b>non-commercial use</b>. <a href='mailto:hello@co2signal.com'>Reach out to us</a> if you plan to commercialise it.
+This API is free for <b>non-commercial use</b>. <a href="mailto:pro@electricitymap.org">Reach out to us</a> if you plan to commercialise it.
 </aside>
 
 <h1 id="authentication">Authentication</h1>
@@ -349,51 +349,6 @@ Currently we default to zones by country, but this will quickly evolve to be as 
 <td>lat</td>
 <td></td>
 <td>latitude</td>
-</tr>
-</tbody></table>
-
-<h2 id="get-forecast-by-country-code">Get forecast by country code</h2>
-<pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.co2signal.com/v1/forecast?countryCode=DK'</span>
-  -H <span class="s1">'auth-token: myapitoken'</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"co2intensity"</span><span class="p">:</span><span class="w"> </span><span class="mf">317.3998819423093</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-08T13:00:00+00:00"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"co2intensity"</span><span class="p">:</span><span class="w"> </span><span class="mf">314.3511584530321</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-08T14:00:00+00:00"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="err">...</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-08T13:04:19.710730+00:00"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a forecast of the next 24h of a country.
-WARNING: only Denmark is available for now.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET https://api.co2signal.com/v1/forecast</code></p>
-
-<h3 id="query-parameters">Query Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>countryCode</td>
-<td></td>
-<td>two-letter iso country code</td>
 </tr>
 </tbody></table>
 
