@@ -17,7 +17,7 @@ Welcome to the CO2 Signal API! You can use our API to get access to information 
 - how much carbon was emitted to produce it
 
 <aside class="warning">
-This API is free for <b>non-commercial use</b>. <a href='mailto:hello@co2signal.com'>Reach out to us</a> if you plan to commercialise it.
+This API is free for <b>non-commercial use</b>. <a href="mailto:pro@electricitymap.org">Reach out to us</a> if you plan to commercialise it.
 </aside>
 
 # Authentication
@@ -116,42 +116,3 @@ Parameter | Default | Description
 --------- | ------- | -----------
 lon | | longitude
 lat | | latitude
-
-
-## Get forecast by country code
-```shell
-curl 'https://api.co2signal.com/v1/forecast?countryCode=DK'
-  -H 'auth-token: myapitoken'
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-    "data": [
-        {
-            "co2intensity": 317.3998819423093,
-            "datetime": "2017-03-08T13:00:00+00:00"
-        },
-        {
-            "co2intensity": 314.3511584530321,
-            "datetime": "2017-03-08T14:00:00+00:00"
-        },
-        ...
-    ],
-    "datetime": "2017-03-08T13:04:19.710730+00:00"
-}
-```
-
-This endpoint retrieves a forecast of the next 24h of a country.
-WARNING: only Denmark is available for now.
-
-### HTTP Request
-
-`GET https://api.co2signal.com/v1/forecast`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-countryCode | | two-letter iso country code
