@@ -3,7 +3,7 @@ title: API Reference
 
 toc_footers:
   - <a href='https://www.co2signal.com/' target='_blank'>Sign Up for a Developer Key</a>
-  - Questions? <a href='mailto:hello@co2signal.com'>Reach out to us</a>
+  - Questions? <a href='mailto:hello@tomorrow.com'>Reach out to us</a>
 
 search: true
 ---
@@ -26,7 +26,7 @@ This API is free for <b>non-commercial use</b>. <a href="mailto:pro@electricitym
 
 ```shell
 # With shell, you can just pass the correct header with each request
-curl 'https://api.co2signal.com/v1/latest?countryCode=DK'
+curl 'https://api.co2signal.com/v1/latest?countryCode=DK-DK1'
   -H 'auth-token: myapitoken'
 ```
 
@@ -67,7 +67,9 @@ curl 'https://api.co2signal.com/v1/latest?countryCode=FR'
 }
 ```
 
-This endpoint retrieves the last known state of a country.
+This endpoint retrieves the last known state of a country. It is also possible to get data for a specific zone, in case the country is divided by zones on electricitymap.org.
+
+See [http://api.electricitymap.org/v3/zones](http://api.electricitymap.org/v3/zones) for list of available zones.
 
 ### HTTP Request
 
