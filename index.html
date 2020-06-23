@@ -217,7 +217,7 @@
       </div>
         <ul class="toc-footer">
             <li><a href='https://www.co2signal.com/' target='_blank'>Sign Up for a Developer Key</a></li>
-            <li>Questions? <a href='mailto:hello@co2signal.com'>Reach out to us</a></li>
+            <li>Questions? <a href='mailto:hello@tomorrow.com'>Reach out to us</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -243,7 +243,7 @@ This API is free for <b>non-commercial use</b>. <a href="mailto:pro@electricitym
 <p>To authorize, use this code:</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s1">'https://api.co2signal.com/v1/latest?countryCode=DK'</span>
+curl <span class="s1">'https://api.co2signal.com/v1/latest?countryCode=DK-DK1'</span>
   -H <span class="s1">'auth-token: myapitoken'</span>
 </code></pre>
 <blockquote>
@@ -282,7 +282,9 @@ You must replace <code>myapitoken</code> with your personal API key.
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves the last known state of a country.</p>
+<p>This endpoint retrieves the last known state of a country. It is also possible to get data for a specific zone, in case the country is divided by zones on electricitymap.org.</p>
+
+<p>See <a href="http://api.electricitymap.org/v3/zones">http://api.electricitymap.org/v3/zones</a> for list of available zones.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
