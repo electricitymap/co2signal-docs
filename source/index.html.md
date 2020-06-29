@@ -20,6 +20,10 @@ Welcome to the CO2 Signal API! You can use our API to get access to information 
 This API is free for <b>non-commercial use</b>. <a href="mailto:pro@electricitymap.org">Reach out to us</a> if you plan to commercialise it.
 </aside>
 
+<aside class="notice">
+The API has a rate limit of 30 requests per hour.
+</aside>
+
 # Authentication
 
 > To authorize, use this code:
