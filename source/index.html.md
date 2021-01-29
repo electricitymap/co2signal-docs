@@ -6,6 +6,8 @@ toc_footers:
   - Questions? <a href='mailto:hello@tomorrow.com'>Reach out to us</a>
 
 search: true
+
+code_clipboard: true
 ---
 
 # Introduction
